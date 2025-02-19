@@ -53,79 +53,6 @@ public class PlayerInputHandle : MonoBehaviour
     }
     void Update()
     {
-        // foreach (KeyCode keyCode in System.Enum.GetValues(typeof(KeyCode)))
-        // {
-        //     if (Input.GetKeyDown(keyCode))
-        //     {
-        //         switch (keyCode)
-        //         {
-        //             case KeyCode.Q: P_KState.QDown = true; break;   //궁
-        //             case KeyCode.W: P_KState.WDown = true; break;   //앞
-        //             case KeyCode.E: P_KState.EDown = true; break;   //스킬1
-        //             case KeyCode.R: P_KState.RDown = true; break;   //스킬2
-        //             case KeyCode.T: P_KState.TDown = true; break;   //조준
-        //             case KeyCode.Y: P_KState.YDown = true; break;
-        //             case KeyCode.U: P_KState.UDown = true; break;
-        //             case KeyCode.I: P_KState.IDown = true; break;
-        //             case KeyCode.O: P_KState.ODown = true; break;
-        //             case KeyCode.P: P_KState.PDown = true; break;
-        //             case KeyCode.A: P_KState.ADown = true; break;   //좌
-        //             case KeyCode.S: P_KState.SDown = true; break;   //뒤
-        //             case KeyCode.D: P_KState.DDown = true; break;   //우
-        //             case KeyCode.F: P_KState.FDown = true; break;   //스킬3
-        //             case KeyCode.G: P_KState.GDown = true; break;
-        //             case KeyCode.H: P_KState.HDown = true; break;
-        //             case KeyCode.J: P_KState.JDown = true; break;
-        //             case KeyCode.K: P_KState.KDown = true; break;
-        //             case KeyCode.L: P_KState.LDown = true; break;
-        //             case KeyCode.Z: P_KState.ZDown = true; break;
-        //             case KeyCode.X: P_KState.XDown = true; break;
-        //             case KeyCode.C: P_KState.CDown = true; break;
-        //             case KeyCode.V: P_KState.VDown = true; break;
-        //             case KeyCode.B: P_KState.BDown = true; break;
-        //             case KeyCode.N: P_KState.NDown = true; break;
-        //             case KeyCode.M: P_KState.MDown = true; break;
-        //             case KeyCode.CapsLock: P_States.isWalking = true; break;    //걷기 on
-        //             default: break;
-        //         }
-        //     }
-
-        //     if (Input.GetKeyUp(keyCode))
-        //     {
-        //         switch (keyCode)
-        //         {
-        //             case KeyCode.Q: P_KState.QDown = false; break;  //궁
-        //             case KeyCode.W: P_KState.WDown = false; break;  //앞
-        //             case KeyCode.E: P_KState.EDown = false; break;  //스킬1
-        //             case KeyCode.R: P_KState.RDown = false; break;  //스킬2
-        //             case KeyCode.T: P_KState.TDown = false; break;  //조준
-        //             case KeyCode.Y: P_KState.YDown = false; break;
-        //             case KeyCode.U: P_KState.UDown = false; break;
-        //             case KeyCode.I: P_KState.IDown = false; break;
-        //             case KeyCode.O: P_KState.ODown = false; break;
-        //             case KeyCode.P: P_KState.PDown = false; break;
-        //             case KeyCode.A: P_KState.ADown = false; break;  //좌
-        //             case KeyCode.S: P_KState.SDown = false; break;  //뒤
-        //             case KeyCode.D: P_KState.DDown = false; break;  //우
-        //             case KeyCode.F: P_KState.FDown = false; break;  //스킬3
-        //             case KeyCode.G: P_KState.GDown = false; break;
-        //             case KeyCode.H: P_KState.HDown = false; break;
-        //             case KeyCode.J: P_KState.JDown = false; break;
-        //             case KeyCode.K: P_KState.KDown = false; break;
-        //             case KeyCode.L: P_KState.LDown = false; break;
-        //             case KeyCode.Z: P_KState.ZDown = false; break;
-        //             case KeyCode.X: P_KState.XDown = false; break;
-        //             case KeyCode.C: P_KState.CDown = false; break;
-        //             case KeyCode.V: P_KState.VDown = false; break;
-        //             case KeyCode.B: P_KState.BDown = false; break;
-        //             case KeyCode.N: P_KState.NDown = false; break;
-        //             case KeyCode.M: P_KState.MDown = false; break;
-        //             case KeyCode.CapsLock: P_States.isWalking = false; break;   //걷기 off
-        //             default: break;
-        //         }
-        //     }
-        // }
-
         if (Input.GetKeyDown(KeyCode.Q)) P_KState.QDown = true;   // 궁
         if (Input.GetKeyDown(KeyCode.E)) P_KState.EDown = true;   // 스킬1
         if (Input.GetKeyDown(KeyCode.R)) P_KState.RDown = true;   // 스킬2
@@ -133,19 +60,18 @@ public class PlayerInputHandle : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A)) P_KState.ADown = true;   // 좌
         if (Input.GetKeyDown(KeyCode.S)) P_KState.SDown = true;   // 뒤
         if (Input.GetKeyDown(KeyCode.D)) P_KState.DDown = true;   // 우
-        if (Input.GetKeyDown(KeyCode.V)) P_KState.VDown = true;   // 우
+        if (Input.GetKeyDown(KeyCode.V)) P_KState.VDown = true;   // 공격변경
         if (Input.GetKeyDown(KeyCode.CapsLock)) P_States.isWalking = true; // 걷기 on
 
-        if (Input.GetKeyUp(KeyCode.Q)) P_KState.QDown = false;
-        if (Input.GetKeyUp(KeyCode.E)) P_KState.EDown = false;
-        if (Input.GetKeyUp(KeyCode.R)) P_KState.RDown = false;
-        if (Input.GetKeyUp(KeyCode.W)) P_KState.WDown = false;
-        if (Input.GetKeyUp(KeyCode.A)) P_KState.ADown = false;   // 좌
-        if (Input.GetKeyUp(KeyCode.S)) P_KState.SDown = false;   // 뒤
-        if (Input.GetKeyUp(KeyCode.D)) P_KState.DDown = false;   // 우
-        if (Input.GetKeyUp(KeyCode.V)) P_KState.VDown = false;
+        if (Input.GetKeyUp(KeyCode.Q)) P_KState.QDown = false;  // 궁
+        if (Input.GetKeyUp(KeyCode.E)) P_KState.EDown = false;  // 스킬1
+        if (Input.GetKeyUp(KeyCode.R)) P_KState.RDown = false;  // 스킬2
+        if (Input.GetKeyUp(KeyCode.W)) P_KState.WDown = false;  // 앞
+        if (Input.GetKeyUp(KeyCode.A)) P_KState.ADown = false;  // 좌
+        if (Input.GetKeyUp(KeyCode.S)) P_KState.SDown = false;  // 뒤
+        if (Input.GetKeyUp(KeyCode.D)) P_KState.DDown = false;  // 우
+        if (Input.GetKeyUp(KeyCode.V)) P_KState.VDown = false;  // 공격변경
         if (Input.GetKeyUp(KeyCode.CapsLock)) P_States.isWalking = false; // 걷기 off
-
     }
 
     public void KeyRebind()
@@ -200,11 +126,11 @@ public class PlayerInputHandle : MonoBehaviour
 
     public float Key2Movement()
     {
-        if (P_KState.WDown || Input.GetAxis("JVertical") > 0)
+        if (P_KState.WDown)
         {
             P_Input.verticalMovement = 1;
         }
-        else if (P_KState.SDown || Input.GetAxis("JVertical") < 0)
+        else if (P_KState.SDown)
         {
             P_Input.verticalMovement = -1;
         }
@@ -212,11 +138,11 @@ public class PlayerInputHandle : MonoBehaviour
         {
             P_Input.verticalMovement = 0;
         }
-        if (P_KState.DDown || Input.GetAxis("JHorizontal") > 0)
+        if (P_KState.DDown)
         {
             P_Input.horizontalMovement = 1;
         }
-        else if (P_KState.ADown || Input.GetAxis("JHorizontal") < 0)
+        else if (P_KState.ADown)
         {
             P_Input.horizontalMovement = -1;
         }
@@ -227,17 +153,9 @@ public class PlayerInputHandle : MonoBehaviour
         return P_Input.verticalMovement + P_Input.horizontalMovement;
     }
 
-    /// <summary>
-    /// Joystick1Button0 = A
-    /// Joystick1Button1 = B
-    /// joystick1button2 = X
-    /// joystick1button3 = Y
-    /// joystick1button4 = Right Bumper
-    /// joystick1button5 = Left Bumper
-    /// </summary>
     public void MouseClickInput()
     {
-        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Joystick1Button1)) && !(P_States.isBowMode || P_States.isGunMode))    //* 누를 때 => 기본공격
+        if (Input.GetMouseButtonDown(0) && !(P_States.isBowMode || P_States.isGunMode))    //* 누를 때 => 기본공격
         {   //* 마우스 클릭
             if (P_States.isGround
                 //&& !P_States.isGettingHit 
@@ -250,7 +168,7 @@ public class PlayerInputHandle : MonoBehaviour
         }
 
         //* 원거리 
-        if ((Input.GetMouseButtonDown(0) || Input.GetAxis("Fire") > 0) && (P_States.isBowMode || P_States.isGunMode) && !P_States.isElectricShock && !P_States.onShootAim)
+        if (Input.GetMouseButtonDown(0) && (P_States.isBowMode || P_States.isGunMode) && !P_States.isElectricShock && !P_States.onShootAim)
         {
             //Debug.Log("[player test] Input.GetMouseButtonDown(0) 다운");
             P_Value.aimClickDown = 0;
@@ -259,7 +177,7 @@ public class PlayerInputHandle : MonoBehaviour
             P_States.onShootAim = true;
             P_Com.animator.SetBool("onLeftClick", true);
         }
-        else if (Input.GetMouseButtonUp(0) || Input.GetAxis("Fire") <= 0) //endArrow가 false이면 활 o, true이면 x
+        else if (Input.GetMouseButtonUp(0)) //endArrow가 false이면 활 o, true이면 x
         {
             //* 활모드일때 클릭업
             if (P_States.isClickDown && P_States.isBowMode && P_Value.aimClickDown <= 0.25f && !P_States.isShortArrow && !endArrow)
@@ -296,7 +214,7 @@ public class PlayerInputHandle : MonoBehaviour
         }
 
         //* 총모드일 때 꾹 누르고 있으면
-        if ((Input.GetMouseButton(0) || Input.GetAxis("Fire") > 0) && P_States.isGunMode && P_States.onZoomIn && !P_States.isElectricShock)
+        if (Input.GetMouseButton(0) && P_States.isGunMode && P_States.onZoomIn && !P_States.isElectricShock)
         {
             //Debug.Log("[player test] Input.GetMouseButton(0) 꾹");
             // 길게 누르고 있는 중
@@ -311,7 +229,7 @@ public class PlayerInputHandle : MonoBehaviour
             }
         }
         //* 활모드일 때 꾹 누르고 있으면
-        else if ((Input.GetMouseButton(0) || Input.GetAxis("Fire") > 0) && P_States.isBowMode && !P_States.isElectricShock)
+        else if (Input.GetMouseButton(0) && P_States.isBowMode && !P_States.isElectricShock)
         {
             // 길게 누르고 있는 중
             P_Value.aimClickDown += Time.deltaTime;
@@ -336,7 +254,7 @@ public class PlayerInputHandle : MonoBehaviour
         }
 
         //* 총모드일 때 우클릭(좌범퍼) 누르고 있으면 -> 변수 설정(속도 감소) + 줌인
-        if ((Input.GetMouseButton(1) || Input.GetAxis("Aim") > 0) && P_States.isGunMode && !P_States.onZoomIn)
+        if (Input.GetMouseButton(1) && P_States.isGunMode && !P_States.onZoomIn)
         {
             P_States.onZoomIn = true;
             P_Com.animator.SetBool("onClickGun", true);
@@ -346,8 +264,7 @@ public class PlayerInputHandle : MonoBehaviour
                 P_Skills.ZoomOnOff(true);
             }
         }
-        else if (Input.GetMouseButtonUp(1) //|| Input.GetAxis("Aim") <= 0) 
-            && P_States.isGunMode && P_States.onZoomIn)
+        else if (Input.GetMouseButtonUp(1) && P_States.isGunMode && P_States.onZoomIn)
         {
             P_States.onZoomIn = false;
             P_Com.animator.SetBool("onClickGun", false);
@@ -362,8 +279,7 @@ public class PlayerInputHandle : MonoBehaviour
 
     public void SkillKeyInput()
     {
-        if (P_KState.VDown ||   //* Bow Mode & Sword Mode  
-                Input.GetKey(KeyCode.Joystick1Button0)) // A
+        if (P_KState.VDown) // A   //* Bow Mode & Sword Mode 
         {
             P_KState.VDown = false;
             if (skill_V.imgCool.fillAmount == 0)
@@ -384,7 +300,7 @@ public class PlayerInputHandle : MonoBehaviour
                 P_Skills.skillMotion(mapValueReturnKey(P_SkillInfo.selectSkill[0]), 'Q');
             }
         }
-        if ((P_KState.EDown || Input.GetKey(KeyCode.Joystick1Button3)) && !P_States.isSkill)    // heal
+        if (P_KState.EDown && !P_States.isSkill)    // heal
         {
             if (skill_E.imgCool.fillAmount == 0)
             {

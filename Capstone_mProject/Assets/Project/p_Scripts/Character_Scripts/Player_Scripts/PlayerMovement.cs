@@ -251,7 +251,6 @@ public class PlayerMovement : MonoBehaviour
             P_States.isJumping = true;
             P_Value.gravity = P_COption.gravity;
             P_Com.rigidbody.AddForce(Vector3.up * P_COption.jumpPower, ForceMode.Impulse);
-            //P_Com.animator.Play("jump_start");
             P_Com.animator.SetTrigger("isJump");
             P_Com.animator.SetBool("isJump_Up", true);
         }
