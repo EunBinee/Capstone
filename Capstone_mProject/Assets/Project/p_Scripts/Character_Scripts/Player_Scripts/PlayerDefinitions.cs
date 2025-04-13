@@ -104,6 +104,9 @@ public class CurrentState
     public bool doNotRotate;
     public bool isDie;
 
+    public bool dontMove;
+    public bool onSkillUI;
+
     [Header("Timing Check")]
     public bool isPerformingAction; //액션을 수행 중인지 여부
     public bool isStop; //대화창 활성화될때 움직임 비활성화여부

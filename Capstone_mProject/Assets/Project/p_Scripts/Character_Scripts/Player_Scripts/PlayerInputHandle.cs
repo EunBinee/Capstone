@@ -53,6 +53,10 @@ public class PlayerInputHandle : MonoBehaviour
     }
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.T)) P_Movement.SkillTreeUI(); // P_KState.TDown = true;   // 스킬창 on
+        
+        if (P_States.dontMove) return;
+
         if (Input.GetKeyDown(KeyCode.Q)) P_KState.QDown = true;   // 궁
         if (Input.GetKeyDown(KeyCode.E)) P_KState.EDown = true;   // 스킬1
         if (Input.GetKeyDown(KeyCode.R)) P_KState.RDown = true;   // 스킬2
@@ -71,6 +75,7 @@ public class PlayerInputHandle : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.S)) P_KState.SDown = false;  // 뒤
         if (Input.GetKeyUp(KeyCode.D)) P_KState.DDown = false;  // 우
         if (Input.GetKeyUp(KeyCode.V)) P_KState.VDown = false;  // 공격변경
+        //if (Input.GetKeyUp(KeyCode.T)) P_Movement.SkillTreeUI(); // P_KState.TDown = false;   // 스킬창 off
         if (Input.GetKeyUp(KeyCode.CapsLock)) P_States.isWalking = false; // 걷기 off
     }
 
@@ -318,12 +323,6 @@ public class PlayerInputHandle : MonoBehaviour
                 P_Skills.skillMotion(mapValueReturnKey(P_SkillInfo.selectSkill[2]), 'R');
             }
         }
-        //if (P_KState.TDown && !P_States.isSkill)
-        //{
-        //    P_KState.TDown = false;
-        //    if (skill_T.imgCool.fillAmount == 0)
-        //        P_Skills.skillMotion("Ultimate", 'T');
-        //}
     }
 
     public void skillBtnOnclick(char key)
@@ -342,10 +341,6 @@ public class PlayerInputHandle : MonoBehaviour
                 P_KState.RDown = false;
                 skill_R.OnClicked();
                 break;
-            //case 'T':
-            //    P_KState.TDown = false;
-            //    skill_T.OnClicked();
-            //    break;
             default: break;
         }
         P_States.isSkill = false;

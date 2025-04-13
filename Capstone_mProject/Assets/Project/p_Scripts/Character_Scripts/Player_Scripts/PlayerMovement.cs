@@ -195,6 +195,24 @@ public class PlayerMovement : MonoBehaviour
             else { P_States.isNotMoving = false; }
         }
     }
+    public void SkillTreeUI()
+    {
+        if (!P_States.onSkillUI) 
+        {
+            P_States.onSkillUI = true;
+        }
+        else 
+        {
+            P_States.onSkillUI = false;
+        }
+
+        P_States.dontMove = P_States.onSkillUI;
+        P_States.doNotRotate = P_States.onSkillUI;
+        P_InputHandle.KeyRebind();
+        //todo 플레이어 이동값 없애기
+        skillTree.gameObject.SetActive(P_States.onSkillUI);
+        P_Controller.PlayerUI_SetActive(!P_States.onSkillUI);
+    }
 
     private void HandleSprint()
     {
