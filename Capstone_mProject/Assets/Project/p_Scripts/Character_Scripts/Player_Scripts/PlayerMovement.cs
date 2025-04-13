@@ -200,16 +200,19 @@ public class PlayerMovement : MonoBehaviour
         if (!P_States.onSkillUI) 
         {
             P_States.onSkillUI = true;
+            Cursor.visible = true;    
+            Cursor.lockState = CursorLockMode.None; 
         }
         else 
         {
             P_States.onSkillUI = false;
+            Cursor.visible = false;     //마우스 커서를 보이지 않게
+            Cursor.lockState = CursorLockMode.Locked; //마우스 커서 위치 고정
         }
 
         P_States.dontMove = P_States.onSkillUI;
         P_States.doNotRotate = P_States.onSkillUI;
         P_InputHandle.KeyRebind();
-        //todo 플레이어 이동값 없애기
         skillTree.gameObject.SetActive(P_States.onSkillUI);
         P_Controller.PlayerUI_SetActive(!P_States.onSkillUI);
     }

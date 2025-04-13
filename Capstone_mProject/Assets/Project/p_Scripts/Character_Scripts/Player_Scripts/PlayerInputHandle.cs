@@ -160,6 +160,7 @@ public class PlayerInputHandle : MonoBehaviour
 
     public void MouseClickInput()
     {
+        if (P_States.onSkillUI) return;
         if (Input.GetMouseButtonDown(0) && !(P_States.isBowMode || P_States.isGunMode))    //* 누를 때 => 기본공격
         {   //* 마우스 클릭
             if (P_States.isGround
